@@ -14,6 +14,9 @@ const port: string | number = process.env.PORT || 4000;
 // cors config
 server.use(cors());
 
+// json middleware config
+server.use(express.json({limit: '50mb'}));
+
 // Test 'api/health' route
 server.get('/api/health', (req:Request, res:Response) => {
     res.json({status: "ok"});
