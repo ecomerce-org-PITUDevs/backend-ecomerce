@@ -28,11 +28,7 @@ const userSchema = new Schema<IUser>({
         enum: ["user", "admin"],
         default: "user",
     }, 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-});
+}, { timestamps: true });
 
 export default model<IUser>("User", userSchema);
 
